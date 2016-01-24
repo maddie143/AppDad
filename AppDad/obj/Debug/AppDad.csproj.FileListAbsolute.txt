@@ -1,0 +1,13 @@
+D:\Free time\Projects\AppDad\AppDad\bin\Debug\AppDad.exe.config
+D:\Free time\Projects\AppDad\AppDad\bin\Debug\tabel.accdb
+D:\Free time\Projects\AppDad\AppDad\bin\Debug\AppDad.exe
+D:\Free time\Projects\AppDad\AppDad\bin\Debug\AppDad.pdb
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.csprojResolveAssemblyReference.cache
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Add_document.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Form1.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Properties.Resources.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.csproj.GenerateResource.Cache
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.exe
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.pdb
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.test.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.New_driver.resources
