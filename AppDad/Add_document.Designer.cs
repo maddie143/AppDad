@@ -53,20 +53,19 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.tabelDataSet = new AppDad.tabelDataSet();
-            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carsTableAdapter = new AppDad.tabelDataSetTableAdapters.CarsTableAdapter();
-            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.documentTableAdapter = new AppDad.tabelDataSetTableAdapters.DocumentTableAdapter();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.driversTableAdapter = new AppDad.tabelDataSetTableAdapters.DriversTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
+            this.documentTableAdapter = new AppDad.tabelDataSetTableAdapters.DocumentTableAdapter();
+            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabelDataSet = new AppDad.tabelDataSet();
+            this.carsTableAdapter = new AppDad.tabelDataSetTableAdapters.CarsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -308,15 +307,6 @@
             this.label12.Text = "Numar masina";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(58, 206);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(204, 43);
-            this.listBox1.TabIndex = 25;
-            this.listBox1.Visible = false;
-            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -339,37 +329,27 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tabelDataSet
+            // driversTableAdapter
             // 
-            this.tabelDataSet.DataSetName = "tabelDataSet";
-            this.tabelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.driversTableAdapter.ClearBeforeFill = true;
+            // 
+            // documentTableAdapter
+            // 
+            this.documentTableAdapter.ClearBeforeFill = true;
             // 
             // carsBindingSource
             // 
             this.carsBindingSource.DataMember = "Cars";
             this.carsBindingSource.DataSource = this.tabelDataSet;
             // 
+            // tabelDataSet
+            // 
+            this.tabelDataSet.DataSetName = "tabelDataSet";
+            this.tabelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // carsTableAdapter
             // 
             this.carsTableAdapter.ClearBeforeFill = true;
-            // 
-            // documentBindingSource
-            // 
-            this.documentBindingSource.DataMember = "Document";
-            this.documentBindingSource.DataSource = this.tabelDataSet;
-            // 
-            // documentTableAdapter
-            // 
-            this.documentTableAdapter.ClearBeforeFill = true;
-            // 
-            // driversBindingSource
-            // 
-            this.driversBindingSource.DataMember = "Drivers";
-            this.driversBindingSource.DataSource = this.tabelDataSet;
-            // 
-            // driversTableAdapter
-            // 
-            this.driversTableAdapter.ClearBeforeFill = true;
             // 
             // Add_document
             // 
@@ -378,7 +358,6 @@
             this.ClientSize = new System.Drawing.Size(828, 393);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.comboBox2);
@@ -406,10 +385,10 @@
             this.Name = "Add_document";
             this.Text = "Add_document";
             this.Load += new System.EventHandler(this.Add_document_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,15 +420,14 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource driversBindingSource;
+        private tabelDataSetTableAdapters.DriversTableAdapter driversTableAdapter;
+        private System.Windows.Forms.BindingSource documentBindingSource;
+        private tabelDataSetTableAdapters.DocumentTableAdapter documentTableAdapter;
         private tabelDataSet tabelDataSet;
         private System.Windows.Forms.BindingSource carsBindingSource;
         private tabelDataSetTableAdapters.CarsTableAdapter carsTableAdapter;
-        private System.Windows.Forms.BindingSource documentBindingSource;
-        private tabelDataSetTableAdapters.DocumentTableAdapter documentTableAdapter;
-        private System.Windows.Forms.BindingSource driversBindingSource;
-        private tabelDataSetTableAdapters.DriversTableAdapter driversTableAdapter;
     }
 }

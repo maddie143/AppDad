@@ -17,8 +17,8 @@ namespace AppDad
             InitializeComponent();
             default_buttons();
             default_color();
-            driversTableAdapter.Return_drr(tabelDataSet.Drivers);
-            carsTableAdapter.Return_carss(tabelDataSet.Cars);
+            driversTableAdapter.Return_dr(tabelDataSet.Drivers);
+            carsTableAdapter.Return_cars(tabelDataSet.Cars);
             DataTable driver = tabelDataSet.Drivers;
             int i,ok,j;
             for (i = 0; i < driver.Rows.Count; i++)
@@ -59,6 +59,10 @@ namespace AppDad
 
         private void Add_document_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tabelDataSet.Cars' table. You can move, or remove it, as needed.
+            this.carsTableAdapter.Fill(this.tabelDataSet.Cars);
+            // TODO: This line of code loads data into the 'tabelDataSet.Document' table. You can move, or remove it, as needed.
+            this.documentTableAdapter.Fill(this.tabelDataSet.Document);
             // TODO: This line of code loads data into the 'tabelDataSet.Drivers' table. You can move, or remove it, as needed.
             this.driversTableAdapter.Fill(this.tabelDataSet.Drivers);
             // TODO: This line of code loads data into the 'tabelDataSet.Document' table. You can move, or remove it, as needed.
@@ -200,39 +204,88 @@ namespace AppDad
             comboBox1.BackColor = System.Drawing.Color.White;
             comboBox2.BackColor = System.Drawing.Color.White;
         }
+        public int check_duplicate()
+        {
+            DataTable documente = tabelDataSet.Document;
+            int i,
+                ok;
+            ok = 1;
+            for (i = 0; i < documente.Rows.Count; i++)
+            {
+                if ((int)documente.Rows[i]["Data"] == int.Parse(textBox1.Text) &&
+                    (int)documente.Rows[i]["Document_no"] == int.Parse(textBox2.Text) &&
+                    documente.Rows[i]["Car_number"].ToString() == comboBox1.SelectedItem.ToString() &&
+                    documente.Rows[i]["Driver_Name"].ToString() == comboBox2.SelectedItem.ToString() &&
+                    (int)documente.Rows[i]["Fuel"] == int.Parse(textBox4.Text) &&
+                    (int)documente.Rows[i]["Km_start"] == int.Parse(textBox7.Text) &&
+                    (int)documente.Rows[i]["Km_end"] == int.Parse(textBox8.Text) &&
+                    documente.Rows[i]["Hours_start"].ToString() == textBox9.Text &&
+                    documente.Rows[i]["Hours_end"].ToString() == textBox10.Text &&
+                    (int)documente.Rows[i]["Consumption"] == int.Parse(textBox5.Text) &&
+                    (int)documente.Rows[i]["ADBLU"] == int.Parse(textBox6.Text) &&
+                    documente.Rows[i]["Route"].ToString() == textBox11.Text &&
+                    (int)documente.Rows[i]["Month_nr"] == DateTime.Now.Month)
+                    {
+                                ok = 0;
 
+                    }
+            }
+            return ok;
+
+
+        }
+        public void add_Document()
+        {
+            DateTime date = DateTime.Now;
+            MessageBoxButtons yes = MessageBoxButtons.YesNo;
+            DialogResult answer;
+            answer = MessageBox.Show(this, "Doriti sa salvati?", "", yes);
+
+            if (answer == DialogResult.Yes)
+            {
+                MessageBox.Show("Datele au fost introduse.");
+                documentTableAdapter.InsertDocument(
+                    int.Parse(textBox1.Text),
+                    int.Parse(textBox2.Text),
+                    comboBox1.SelectedItem.ToString(),
+                    comboBox2.SelectedItem.ToString(),
+                    int.Parse(textBox4.Text),
+                    int.Parse(textBox7.Text),
+                    int.Parse(textBox8.Text),
+                    textBox9.Text,
+                    textBox10.Text,
+                    int.Parse(textBox5.Text),
+                    int.Parse(textBox6.Text),
+                    textBox11.Text,
+                    date.Month
+                    );
+
+                documentTableAdapter.Fill(tabelDataSet.Document);
+                documentTableAdapter.Update(tabelDataSet.Document);
+                default_color();
+            }
+            default_buttons();
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (validate_datas() == 1)
             {
-                MessageBoxButtons yes = MessageBoxButtons.YesNo;
-                DialogResult answer;
-                answer = MessageBox.Show(this, "Doriti sa salvati?", "", yes);
-
-                if (answer == DialogResult.Yes)
+                if (check_duplicate() == 1)
                 {
-                    MessageBox.Show("Datele au fost introduse.");
-                    documentTableAdapter.InsertDocument(
-                        int.Parse(textBox1.Text),
-                        int.Parse(textBox2.Text), 
-                        comboBox1.SelectedItem.ToString(), 
-                        comboBox2.SelectedItem.ToString(), 
-                        int.Parse(textBox4.Text), 
-                        int.Parse(textBox7.Text), 
-                        int.Parse(textBox8.Text), 
-                        textBox9.Text,
-                        textBox10.Text, 
-                        int.Parse(textBox5.Text), 
-                        int.Parse(textBox6.Text), 
-                        textBox11.Text
-                        );
+                    add_Document();
+                }
+                else
+                {
+                    MessageBoxButtons yes = MessageBoxButtons.YesNo;
+                    DialogResult answer;
+                    answer = MessageBox.Show(this, "Datele introduse exista deja. Doriti sa le adaugati inca o data?", "", yes);
+                    if (answer == DialogResult.Yes)
+                    {
+                        add_Document();
+                    }
 
-                    documentTableAdapter.GetData();
-                    documentTableAdapter.Fill(tabelDataSet.Document);
-                    documentTableAdapter.Update(tabelDataSet.Document);
-                    default_buttons();
-                    default_color();
-                  }
+                }
             }
             else
             {

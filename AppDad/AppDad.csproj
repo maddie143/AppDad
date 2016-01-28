@@ -11,6 +11,21 @@
     <AssemblyName>AppDad</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -26,10 +41,11 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>C:\Users\Tincarica\Desktop\test\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -50,11 +66,41 @@
     <Compile Include="Add_document.Designer.cs">
       <DependentUpon>Add_document.cs</DependentUpon>
     </Compile>
+    <Compile Include="Delete_car.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete_car.Designer.cs">
+      <DependentUpon>Delete_car.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delete_document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete_document.Designer.cs">
+      <DependentUpon>Delete_document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delete_document_confirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete_document_confirmation.Designer.cs">
+      <DependentUpon>Delete_document_confirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delete_driver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete_driver.Designer.cs">
+      <DependentUpon>Delete_driver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New_car.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_car.Designer.cs">
+      <DependentUpon>New_car.cs</DependentUpon>
     </Compile>
     <Compile Include="New_driver.cs">
       <SubType>Form</SubType>
@@ -82,8 +128,23 @@
     <EmbeddedResource Include="Add_document.resx">
       <DependentUpon>Add_document.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Delete_car.resx">
+      <DependentUpon>Delete_car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete_document.resx">
+      <DependentUpon>Delete_document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete_document_confirmation.resx">
+      <DependentUpon>Delete_document_confirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete_driver.resx">
+      <DependentUpon>Delete_driver.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_car.resx">
+      <DependentUpon>New_car.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New_driver.resx">
       <DependentUpon>New_driver.cs</DependentUpon>
@@ -123,6 +184,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <Content Include="tabel.accdb">

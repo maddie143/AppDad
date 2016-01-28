@@ -22,6 +22,10 @@ namespace AppDad
         {
             // TODO: This line of code loads data into the 'tabelDataSet.Document' table. You can move, or remove it, as needed.
             this.documentTableAdapter.Fill(this.tabelDataSet.Document);
+            // TODO: This line of code loads data into the 'tabelDataSet.Document' table. You can move, or remove it, as needed.
+            this.documentTableAdapter.Fill(this.tabelDataSet.Document);
+            // TODO: This line of code loads data into the 'tabelDataSet.Document' table. You can move, or remove it, as needed.
+            this.documentTableAdapter.Fill(this.tabelDataSet.Document);
 
         }
     }

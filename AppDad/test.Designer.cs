@@ -46,6 +46,7 @@
             this.consumptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aDBLUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthnrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
@@ -68,11 +69,12 @@
             this.hoursendDataGridViewTextBoxColumn,
             this.consumptionDataGridViewTextBoxColumn,
             this.aDBLUDataGridViewTextBoxColumn,
-            this.routeDataGridViewTextBoxColumn});
+            this.routeDataGridViewTextBoxColumn,
+            this.monthnrDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.documentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 36);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 48);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(615, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(631, 202);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabelDataSet
@@ -167,6 +169,12 @@
             this.routeDataGridViewTextBoxColumn.HeaderText = "Route";
             this.routeDataGridViewTextBoxColumn.Name = "routeDataGridViewTextBoxColumn";
             // 
+            // monthnrDataGridViewTextBoxColumn
+            // 
+            this.monthnrDataGridViewTextBoxColumn.DataPropertyName = "Month_nr";
+            this.monthnrDataGridViewTextBoxColumn.HeaderText = "Month_nr";
+            this.monthnrDataGridViewTextBoxColumn.Name = "monthnrDataGridViewTextBoxColumn";
+            // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,5 +210,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn consumptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aDBLUDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn routeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monthnrDataGridViewTextBoxColumn;
     }
 }

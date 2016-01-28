@@ -1,0 +1,13 @@
+C:\Users\Tincarica\Desktop\test\AppDad.exe.config
+C:\Users\Tincarica\Desktop\test\tabel.accdb
+C:\Users\Tincarica\Desktop\test\AppDad.exe
+C:\Users\Tincarica\Desktop\test\AppDad.pdb
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.Add_document.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.Delete_driver.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.Form1.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.New_driver.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.Properties.Resources.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.test.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.csproj.GenerateResource.Cache
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.exe
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.pdb

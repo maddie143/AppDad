@@ -26,9 +26,9 @@ namespace AppDad
                 answer = MessageBox.Show(this, "Doriti sa salvati?", "", MessageBoxButtons.YesNo);
                 if (answer == DialogResult.Yes)
                 {
-                    driversTableAdapter.InsertDriver(textBox1.Text);
-                    driversTableAdapter.Fill(tabelDataSet.Drivers);
-                    driversTableAdapter.Update(tabelDataSet.Drivers);
+                    driversTableAdapter.New_driver(textBox1.Text);
+                    //driversTableAdapter.Fill(tabelDataSet.Drivers);
+                    //driversTableAdapter.Update(tabelDataSet.Drivers);
                     MessageBox.Show("Datele au fost adaugate cu succes.");
                 }
                 else
@@ -48,6 +48,8 @@ namespace AppDad
 
         private void New_driver_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tabelDataSet.Drivers' table. You can move, or remove it, as needed.
+            this.driversTableAdapter.Fill(this.tabelDataSet.Drivers);
             // TODO: This line of code loads data into the 'tabelDataSet.Drivers' table. You can move, or remove it, as needed.
             this.driversTableAdapter.Fill(this.tabelDataSet.Drivers);
 

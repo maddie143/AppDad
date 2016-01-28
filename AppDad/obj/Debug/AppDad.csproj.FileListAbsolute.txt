@@ -11,3 +11,8 @@ D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.exe
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.pdb
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.test.resources
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.New_driver.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Delete_driver.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Delete_car.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.New_car.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Delete_document.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Delete_document_confirmation.resources

@@ -39,6 +39,10 @@
             this.soferiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adaugareSoferiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stergereSoferiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.masiniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.soferiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelDataSet = new AppDad.tabelDataSet();
             this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carsTableAdapter = new AppDad.tabelDataSetTableAdapters.CarsTableAdapter();
@@ -46,11 +50,14 @@
             this.documentTableAdapter = new AppDad.tabelDataSetTableAdapters.DocumentTableAdapter();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.driversTableAdapter = new AppDad.tabelDataSetTableAdapters.DriversTableAdapter();
+            this.monthsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monthsTableAdapter = new AppDad.tabelDataSetTableAdapters.MonthsTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -61,7 +68,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adaugareFisaToolStripMenuItem,
             this.masiniToolStripMenuItem,
-            this.soferiToolStripMenuItem});
+            this.soferiToolStripMenuItem,
+            this.statisticaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(830, 26);
@@ -91,6 +99,7 @@
             this.stergereFisaToolStripMenuItem.Name = "stergereFisaToolStripMenuItem";
             this.stergereFisaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.stergereFisaToolStripMenuItem.Text = "Stergere fisa";
+            this.stergereFisaToolStripMenuItem.Click += new System.EventHandler(this.stergereFisaToolStripMenuItem_Click);
             // 
             // masiniToolStripMenuItem
             // 
@@ -109,12 +118,14 @@
             this.adaugareMasinaToolStripMenuItem.Name = "adaugareMasinaToolStripMenuItem";
             this.adaugareMasinaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.adaugareMasinaToolStripMenuItem.Text = "Adaugare masina";
+            this.adaugareMasinaToolStripMenuItem.Click += new System.EventHandler(this.adaugareMasinaToolStripMenuItem_Click);
             // 
             // stergereMasinaToolStripMenuItem
             // 
             this.stergereMasinaToolStripMenuItem.Name = "stergereMasinaToolStripMenuItem";
             this.stergereMasinaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.stergereMasinaToolStripMenuItem.Text = "Stergere masina";
+            this.stergereMasinaToolStripMenuItem.Click += new System.EventHandler(this.stergereMasinaToolStripMenuItem_Click);
             // 
             // soferiToolStripMenuItem
             // 
@@ -138,6 +149,35 @@
             this.stergereSoferiToolStripMenuItem.Name = "stergereSoferiToolStripMenuItem";
             this.stergereSoferiToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.stergereSoferiToolStripMenuItem.Text = "Stergere soferi";
+            this.stergereSoferiToolStripMenuItem.Click += new System.EventHandler(this.stergereSoferiToolStripMenuItem_Click);
+            // 
+            // statisticaToolStripMenuItem
+            // 
+            this.statisticaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fiseToolStripMenuItem,
+            this.masiniToolStripMenuItem1,
+            this.soferiToolStripMenuItem1});
+            this.statisticaToolStripMenuItem.Name = "statisticaToolStripMenuItem";
+            this.statisticaToolStripMenuItem.Size = new System.Drawing.Size(74, 22);
+            this.statisticaToolStripMenuItem.Text = "Statistica";
+            // 
+            // fiseToolStripMenuItem
+            // 
+            this.fiseToolStripMenuItem.Name = "fiseToolStripMenuItem";
+            this.fiseToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.fiseToolStripMenuItem.Text = "Fise";
+            // 
+            // masiniToolStripMenuItem1
+            // 
+            this.masiniToolStripMenuItem1.Name = "masiniToolStripMenuItem1";
+            this.masiniToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
+            this.masiniToolStripMenuItem1.Text = "Masini";
+            // 
+            // soferiToolStripMenuItem1
+            // 
+            this.soferiToolStripMenuItem1.Name = "soferiToolStripMenuItem1";
+            this.soferiToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
+            this.soferiToolStripMenuItem1.Text = "Soferi";
             // 
             // tabelDataSet
             // 
@@ -171,6 +211,15 @@
             // 
             this.driversTableAdapter.ClearBeforeFill = true;
             // 
+            // monthsBindingSource
+            // 
+            this.monthsBindingSource.DataMember = "Months";
+            this.monthsBindingSource.DataSource = this.tabelDataSet;
+            // 
+            // monthsTableAdapter
+            // 
+            this.monthsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +236,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +254,10 @@
         private System.Windows.Forms.ToolStripMenuItem stergereMasinaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adaugareSoferiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stergereSoferiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statisticaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fiseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem masiniToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem soferiToolStripMenuItem1;
         private tabelDataSet tabelDataSet;
         private System.Windows.Forms.BindingSource carsBindingSource;
         private tabelDataSetTableAdapters.CarsTableAdapter carsTableAdapter;
@@ -211,6 +265,8 @@
         private tabelDataSetTableAdapters.DocumentTableAdapter documentTableAdapter;
         private System.Windows.Forms.BindingSource driversBindingSource;
         private tabelDataSetTableAdapters.DriversTableAdapter driversTableAdapter;
+        private System.Windows.Forms.BindingSource monthsBindingSource;
+        private tabelDataSetTableAdapters.MonthsTableAdapter monthsTableAdapter;
     }
 }
 
