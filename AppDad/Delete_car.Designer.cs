@@ -90,6 +90,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Delete_car";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Delete_car";
             this.Load += new System.EventHandler(this.Delete_car_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();

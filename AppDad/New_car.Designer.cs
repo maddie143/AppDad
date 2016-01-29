@@ -90,6 +90,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "New_car";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New_car";
             this.Load += new System.EventHandler(this.New_car_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();

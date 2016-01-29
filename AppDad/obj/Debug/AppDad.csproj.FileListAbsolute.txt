@@ -16,3 +16,8 @@ D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Delete_car.resources
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.New_car.resources
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Delete_document.resources
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Delete_document_confirmation.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.DocumentStatistics.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.CarsStatistics.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.DriversStatistics.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.MonthlyStatistics.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.CarsMonthly.resources

@@ -66,6 +66,18 @@
     <Compile Include="Add_document.Designer.cs">
       <DependentUpon>Add_document.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarsMonthly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarsMonthly.Designer.cs">
+      <DependentUpon>CarsMonthly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarsStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarsStatistics.Designer.cs">
+      <DependentUpon>CarsStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Delete_car.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,12 +102,31 @@
     <Compile Include="Delete_driver.Designer.cs">
       <DependentUpon>Delete_driver.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocumentStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentStatistics.Designer.cs">
+      <DependentUpon>DocumentStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriversStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriversStatistics.Designer.cs">
+      <DependentUpon>DriversStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonthlyStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlyStatistics.Designer.cs">
+      <DependentUpon>MonthlyStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Months.cs" />
     <Compile Include="New_car.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +159,12 @@
     <EmbeddedResource Include="Add_document.resx">
       <DependentUpon>Add_document.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CarsMonthly.resx">
+      <DependentUpon>CarsMonthly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarsStatistics.resx">
+      <DependentUpon>CarsStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Delete_car.resx">
       <DependentUpon>Delete_car.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,8 +177,17 @@
     <EmbeddedResource Include="Delete_driver.resx">
       <DependentUpon>Delete_driver.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DocumentStatistics.resx">
+      <DependentUpon>DocumentStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriversStatistics.resx">
+      <DependentUpon>DriversStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyStatistics.resx">
+      <DependentUpon>MonthlyStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New_car.resx">
       <DependentUpon>New_car.cs</DependentUpon>

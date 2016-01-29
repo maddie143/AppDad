@@ -11,3 +11,12 @@ D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.test.resources
 D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.csproj.GenerateResource.Cache
 D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.exe
 D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.pdb
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.CarsMonthly.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.CarsStatistics.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.Delete_car.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.Delete_document.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.Delete_document_confirmation.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.DocumentStatistics.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.DriversStatistics.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.MonthlyStatistics.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Release\AppDad.New_car.resources

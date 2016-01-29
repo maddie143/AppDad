@@ -16,6 +16,7 @@ namespace AppDad
         {
             InitializeComponent();
             dataGridView1.Update();
+
         }
 
         private void test_Load(object sender, EventArgs e)

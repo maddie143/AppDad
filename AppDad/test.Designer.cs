@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabelDataSet = new AppDad.tabelDataSet();
-            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.documentTableAdapter = new AppDad.tabelDataSetTableAdapters.DocumentTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +44,13 @@
             this.aDBLUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monthnrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabelDataSet = new AppDad.tabelDataSet();
+            this.documentTableAdapter = new AppDad.tabelDataSetTableAdapters.DocumentTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -72,24 +73,10 @@
             this.routeDataGridViewTextBoxColumn,
             this.monthnrDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.documentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 48);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(631, 202);
+            this.dataGridView1.Size = new System.Drawing.Size(631, 160);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tabelDataSet
-            // 
-            this.tabelDataSet.DataSetName = "tabelDataSet";
-            this.tabelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // documentBindingSource
-            // 
-            this.documentBindingSource.DataMember = "Document";
-            this.documentBindingSource.DataSource = this.tabelDataSet;
-            // 
-            // documentTableAdapter
-            // 
-            this.documentTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -175,19 +162,45 @@
             this.monthnrDataGridViewTextBoxColumn.HeaderText = "Month_nr";
             this.monthnrDataGridViewTextBoxColumn.Name = "monthnrDataGridViewTextBoxColumn";
             // 
+            // documentBindingSource
+            // 
+            this.documentBindingSource.DataMember = "Document";
+            this.documentBindingSource.DataSource = this.tabelDataSet;
+            // 
+            // tabelDataSet
+            // 
+            this.tabelDataSet.DataSetName = "tabelDataSet";
+            this.tabelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // documentTableAdapter
+            // 
+            this.documentTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(202, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 280);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "test";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "test";
             this.Load += new System.EventHandler(this.test_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -211,5 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aDBLUDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn routeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn monthnrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -92,9 +92,26 @@ namespace AppDad
         private void stergereFisaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Delete_document doc = new Delete_document();
-            MessageBox.Show("Se deschide tabelul.");
             doc.ShowDialog();
                 
+        }
+
+        private void fiseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DocumentStatistics statistici_doc = new DocumentStatistics();
+            statistici_doc.ShowDialog();
+        }
+
+        private void masiniToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CarsStatistics cars = new CarsStatistics();
+            cars.ShowDialog();
+        }
+
+        private void soferiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DriversStatistics drivers = new DriversStatistics();
+            drivers.ShowDialog();
         }
     }
 }

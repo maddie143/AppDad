@@ -211,7 +211,7 @@
               <Mapping SourceColumn="Month_nr" DataSetColumn="Month_nr" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteDocument" Modifier="Public" Name="DeleteDocument" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteDocument">
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteDocument" Modifier="Public" Name="DeleteDocument" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteDocument">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM `Document` WHERE (`Document_no` = ?) </CommandText>
@@ -221,7 +221,7 @@
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="Document" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetID" Modifier="Public" Name="GetID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetID">
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="Document" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetID" Modifier="Public" Name="GetID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ID FROM Document</CommandText>
@@ -229,7 +229,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertDocument" Modifier="Public" Name="InsertDocument" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertDocument">
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertDocument" Modifier="Public" Name="InsertDocument" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertDocument">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `Document` (`Data`, `Document_no`, `Car_number`, `Driver_Name`, `Fuel`, `Km_start`, `Km_end`, `Hours_start`, `Hours_end`, `Consumption`, `ADBLU`, `Route`, `Month_nr`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
@@ -272,6 +272,88 @@
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="Document" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="orderedMonthDays" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="orderedMonthDays" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="orderedMonthDays">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, Data, Document_no, Car_number, Driver_Name, Fuel, Km_start, Km_end, Hours_start, Hours_end, Consumption, ADBLU, Route, Month_nr FROM Document ORDER BY Month_nr, Data ASC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="Document" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="ReturnCarsStatistics" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="ReturnCarsStatistics" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ReturnCarsStatistics">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, Data, Document_no, Car_number, Driver_Name, Fuel, Km_start, Km_end, Hours_start, Hours_end, Consumption, ADBLU, Route, Month_nr FROM Document WHERE Car_number = ?</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Car_number" DataSourceName="Document" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="Car_number" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="Car_number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectName="Document" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="ReturnDataMonth" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="returnDataMonth" GeneratorSourceName="ReturnDataMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ReturnDataMonth">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID, Data, Document_no, Car_number, Driver_Name, Fuel, Km_start, Km_end, Hours_start, Hours_end, Consumption, ADBLU, Route, Month_nr
+FROM            Document
+WHERE        (Month_nr = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Month_nr" DataSourceName="Document" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="Month_nr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Month_nr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ReturnHoursByID" Modifier="Public" Name="ReturnHoursByID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="ReturnHoursByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Hours_star FROM Document WHERE ID=?</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="ID" DataSourceName="Document" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ReturnMonthlyFuel" Modifier="Public" Name="ReturnMonthlyFuel" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="ReturnMonthlyFuel">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT SUM(Fuel) FROM Document WHERE Month_nr = ?</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Month_nr" DataSourceName="Document" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="Month_nr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Month_nr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ReturnMontlyADBLU" Modifier="Public" Name="ReturnMontlyADBLU" QueryType="Scalar" ScalarCallRetval="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="ReturnMontlyADBLU">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT SUM(ADBLU) FROM Document WHERE Month_nr = ?</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Month_nr" DataSourceName="Document" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="Month_nr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Month_nr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ReturnMontlyConsumption" Modifier="Public" Name="ReturnMontlyConsumption" QueryType="Scalar" ScalarCallRetval="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="ReturnMontlyConsumption">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT SUM(Consumption) FROM Document WHERE Month_nr = ?</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Month_nr" DataSourceName="Document" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="Month_nr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Month_nr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="tabelConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SumKilometers" Modifier="Public" Name="SumKilometers" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="SumKilometers">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUM(Hours_end) AS Expr1
+FROM            Document
+WHERE        (Month_nr = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Month_nr" DataSourceName="Document" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="Month_nr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Month_nr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -443,13 +525,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Hours_end" msprop:Generator_ColumnVarNameInTable="columnHours_end" msprop:Generator_ColumnPropNameInRow="Hours_end" msprop:Generator_ColumnPropNameInTable="Hours_endColumn" msprop:Generator_UserColumnName="Hours_end" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="Hours_end" msprop:Generator_ColumnVarNameInTable="columnHours_end" msprop:Generator_ColumnPropNameInRow="Hours_end" msprop:Generator_ColumnPropNameInTable="Hours_endColumn" msprop:Generator_UserColumnName="Hours_end" type="xs:int" minOccurs="0" />
               <xs:element name="Consumption" msprop:Generator_ColumnVarNameInTable="columnConsumption" msprop:Generator_ColumnPropNameInRow="Consumption" msprop:Generator_ColumnPropNameInTable="ConsumptionColumn" msprop:Generator_UserColumnName="Consumption" type="xs:int" minOccurs="0" />
               <xs:element name="ADBLU" msprop:Generator_ColumnVarNameInTable="columnADBLU" msprop:Generator_ColumnPropNameInRow="ADBLU" msprop:Generator_ColumnPropNameInTable="ADBLUColumn" msprop:Generator_UserColumnName="ADBLU" type="xs:int" minOccurs="0" />
               <xs:element name="Route" msprop:Generator_ColumnVarNameInTable="columnRoute" msprop:Generator_ColumnPropNameInRow="Route" msprop:Generator_ColumnPropNameInTable="RouteColumn" msprop:Generator_UserColumnName="Route" minOccurs="0">

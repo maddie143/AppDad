@@ -21,6 +21,7 @@ namespace AppDad
             carsTableAdapter.Return_cars(tabelDataSet.Cars);
             DataTable driver = tabelDataSet.Drivers;
             int i,ok,j;
+            textBox3.Text = DateTime.Now.Month.ToString();
             for (i = 0; i < driver.Rows.Count; i++)
             {
                 ok = 1;
@@ -99,77 +100,101 @@ namespace AppDad
             comboBox2.SelectedItem = null;
         }
 
+        /* We check for the datas:
+         * if they're integers or comboBoxes are null
+         * if they're empty
+         */
         public int validate_datas(){
             try
             {
-                int.Parse(textBox1.Text);
-                int.Parse(textBox2.Text);
+
+                string[] months = Months.months;
+                int[] days = Months.days;
+
+                int.Parse(textBox1.Text); 
+                int.Parse(textBox2.Text); 
                 int.Parse(textBox4.Text);
                 int.Parse(textBox5.Text);
                 int.Parse(textBox6.Text);
                 int.Parse(textBox7.Text);
                 int.Parse(textBox8.Text);
+                int.Parse(textBox9.Text);
+                int.Parse(textBox10.Text);
                 if (comboBox1.SelectedItem == null)
-                    throw new FormatException() ;
+                    return 0;
                 if (comboBox2.SelectedItem == null)
-                    throw new FormatException() ;
+                    return 0;
                 if (textBox1.Text == "")
                     return 0;
                 if (textBox10.Text == "")
                     return 0;
-                if (textBox2.Text == "")
+                if (textBox2.Text == "" || int.Parse(textBox2.Text) < 0)
                     return 0;
-                if (textBox4.Text == "")
+                if (textBox4.Text == "" || int.Parse(textBox4.Text) < 0)
                     return 0;
-                if (textBox5.Text == "")
+                if (textBox5.Text == "" || int.Parse(textBox5.Text) < 0)
                     return 0;
-                if (textBox6.Text == "")
+                if (textBox6.Text == "" || int.Parse(textBox6.Text) < 0)
                     return 0;
                 if (textBox7.Text == "")
                     return 0;
                 if (textBox8.Text == "")
                     return 0;
-                if (textBox9.Text == "")
+                if (textBox9.Text == "" || int.Parse(textBox9.Text) < 0 || int.Parse(textBox9.Text) > 23)
                     return 0;
-                if (textBox11.Text == "")
+                if (textBox11.Text == "" || int.Parse(textBox10.Text) < 0 || int.Parse(textBox10.Text) > 59)
                     return 0;
+
+                if (int.Parse(textBox1.Text) > days[DateTime.Now.Month - 1] || int.Parse(textBox1.Text) <= 0)
+                    return 0;
+
+                if (int.Parse(textBox8.Text) - int.Parse(textBox7.Text) < 0)
+                    return 0;
+
                 return 1;
             }
             catch (FormatException){
                 return 0;
             }
-          }
+        }
+
         public void wrong_elements()
         {
             int number;
+            string[] months = Months.months;
+            int[] days = Months.days;
 
             bool check;
-            check = Int32.TryParse(textBox1.Text,out number);
-            if (check == false || textBox1.Text == "")
+            /* We check for the day to be a positive number and the day to be smaller or equal than/to the last day of the month
+            */
+            check = Int32.TryParse(textBox1.Text,out number); //data
+            MessageBox.Show(DateTime.Now.Month.ToString() + " " + textBox1.Text);
+            if (check == false || textBox1.Text == "" || int.Parse(textBox1.Text) > days[DateTime.Now.Month - 1] || int.Parse(textBox1.Text) <= 0)
                 textBox1.BackColor = System.Drawing.Color.Red;
 
+
             check = Int32.TryParse(textBox2.Text, out number);
-            if (check == false || textBox2.Text == "")
+            if (check == false || textBox2.Text == "" || int.Parse(textBox2.Text) < 0)
                 textBox2.BackColor = System.Drawing.Color.Red;
 
             check = Int32.TryParse(textBox4.Text, out number);
-            if (check == false || textBox4.Text == "")
+            if (check == false || textBox4.Text == "" || int.Parse(textBox4.Text) < 0)
                 textBox4.BackColor = System.Drawing.Color.Red;
 
             check = Int32.TryParse(textBox5.Text, out number);
-            if (check == false || textBox5.Text == "")
+            if (check == false || textBox5.Text == "" || int.Parse(textBox5.Text) < 0)
                 textBox5.BackColor = System.Drawing.Color.Red;
 
             check = Int32.TryParse(textBox6.Text, out number);
-            if (check == false || textBox6.Text == "")
+            if (check == false || textBox6.Text == "" || int.Parse(textBox6.Text) < 0)
                 textBox6.BackColor = System.Drawing.Color.Red;
 
             check = Int32.TryParse(textBox7.Text, out number);
-            if (check == false || textBox7.Text == "")
+            if (check == false || textBox7.Text == "" || int.Parse(textBox8.Text) - int.Parse(textBox7.Text) < 0)
                 textBox7.BackColor = System.Drawing.Color.Red;
 
             check = Int32.TryParse(textBox8.Text, out number);
-            if (check == false || textBox8.Text == "")
+            if (check == false || textBox8.Text == "" || int.Parse(textBox8.Text) - int.Parse(textBox7.Text) < 0)
                 textBox8.BackColor = System.Drawing.Color.Red;
 
             if (comboBox1.SelectedItem == null)
@@ -178,10 +203,12 @@ namespace AppDad
             if (comboBox2.SelectedItem == null)
                 comboBox2.BackColor = System.Drawing.Color.Red;
 
-            if (textBox9.Text == "")
+            check = Int32.TryParse(textBox9.Text, out number);
+            if (check == false || textBox9.Text == "" || int.Parse(textBox9.Text) < 0 || int.Parse(textBox9.Text) > 23)
                 textBox9.BackColor = System.Drawing.Color.Red;
 
-            if (textBox10.Text == "")
+            check = Int32.TryParse(textBox10.Text, out number);
+            if (check == false || textBox10.Text == "" || int.Parse(textBox10.Text) < 0 || int.Parse(textBox10.Text) > 59)
                 textBox10.BackColor = System.Drawing.Color.Red;
 
             if (textBox11.Text == "")
@@ -209,7 +236,9 @@ namespace AppDad
             DataTable documente = tabelDataSet.Document;
             int i,
                 ok;
+            string check_hour;
             ok = 1;
+            check_hour = textBox9.Text + ":" + textBox10.Text;
             for (i = 0; i < documente.Rows.Count; i++)
             {
                 if ((int)documente.Rows[i]["Data"] == int.Parse(textBox1.Text) &&
@@ -219,8 +248,7 @@ namespace AppDad
                     (int)documente.Rows[i]["Fuel"] == int.Parse(textBox4.Text) &&
                     (int)documente.Rows[i]["Km_start"] == int.Parse(textBox7.Text) &&
                     (int)documente.Rows[i]["Km_end"] == int.Parse(textBox8.Text) &&
-                    documente.Rows[i]["Hours_start"].ToString() == textBox9.Text &&
-                    documente.Rows[i]["Hours_end"].ToString() == textBox10.Text &&
+                    documente.Rows[i]["Hours_start"].ToString() == check_hour &&
                     (int)documente.Rows[i]["Consumption"] == int.Parse(textBox5.Text) &&
                     (int)documente.Rows[i]["ADBLU"] == int.Parse(textBox6.Text) &&
                     documente.Rows[i]["Route"].ToString() == textBox11.Text &&
@@ -240,24 +268,37 @@ namespace AppDad
             MessageBoxButtons yes = MessageBoxButtons.YesNo;
             DialogResult answer;
             answer = MessageBox.Show(this, "Doriti sa salvati?", "", yes);
+            int month ;
+            if (textBox3.Text != DateTime.Now.Month.ToString())
+                month = int.Parse(textBox3.Text);
+            else
+            {
+                month = DateTime.Now.Month;
+            }
 
             if (answer == DialogResult.Yes)
             {
+                int result;
+                string check_hour,
+                    kilometers;
+                check_hour = textBox9.Text + ":" + textBox10.Text;
+                result = (int.Parse(textBox8.Text) - int.Parse(textBox7.Text));
+                kilometers = result.ToString();
                 MessageBox.Show("Datele au fost introduse.");
                 documentTableAdapter.InsertDocument(
-                    int.Parse(textBox1.Text),
-                    int.Parse(textBox2.Text),
-                    comboBox1.SelectedItem.ToString(),
+                    int.Parse(textBox1.Text), //data
+                    int.Parse(textBox2.Text), //document_no
+                    comboBox1.SelectedItem.ToString(), 
                     comboBox2.SelectedItem.ToString(),
-                    int.Parse(textBox4.Text),
-                    int.Parse(textBox7.Text),
-                    int.Parse(textBox8.Text),
-                    textBox9.Text,
-                    textBox10.Text,
+                    int.Parse(textBox4.Text), //Fuel
+                    int.Parse(textBox7.Text), //km start
+                    int.Parse(textBox8.Text), //km end
+                    check_hour, //ore functionare - string / concatenare ore
+                    kilometers, //kilometri parcursi
                     int.Parse(textBox5.Text),
                     int.Parse(textBox6.Text),
                     textBox11.Text,
-                    date.Month
+                    month
                     );
 
                 documentTableAdapter.Fill(tabelDataSet.Document);

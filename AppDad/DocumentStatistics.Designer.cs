@@ -1,6 +1,6 @@
 ﻿namespace AppDad
 {
-    partial class Delete_document
+    partial class DocumentStatistics
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tabelDataSet = new AppDad.tabelDataSet();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.documentTableAdapter = new AppDad.tabelDataSetTableAdapters.DocumentTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,26 +46,15 @@
             this.aDBLUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monthnrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).BeginInit();
+            this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabelDataSet = new AppDad.tabelDataSet();
+            this.documentTableAdapter = new AppDad.tabelDataSetTableAdapters.DocumentTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(310, 327);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 54);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Stergere";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tabelDataSet
-            // 
-            this.tabelDataSet.DataSetName = "tabelDataSet";
-            this.tabelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView1
             // 
@@ -98,49 +84,38 @@
             this.routeDataGridViewTextBoxColumn,
             this.monthnrDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.documentBindingSource;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 21);
-            this.dataGridView1.MultiSelect = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 22);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(804, 300);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // documentBindingSource
-            // 
-            this.documentBindingSource.DataMember = "Document";
-            this.documentBindingSource.DataSource = this.tabelDataSet;
-            // 
-            // documentTableAdapter
-            // 
-            this.documentTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(278, 340);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nu exista inregistrari";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Visible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(715, 222);
+            this.dataGridView1.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
             // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.FillWeight = 50F;
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 42;
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -156,7 +131,7 @@
             // 
             this.documentnoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.documentnoDataGridViewTextBoxColumn.DataPropertyName = "Document_no";
-            this.documentnoDataGridViewTextBoxColumn.FillWeight = 60F;
+            this.documentnoDataGridViewTextBoxColumn.FillWeight = 50F;
             this.documentnoDataGridViewTextBoxColumn.HeaderText = "Document_no";
             this.documentnoDataGridViewTextBoxColumn.Name = "documentnoDataGridViewTextBoxColumn";
             this.documentnoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -184,7 +159,6 @@
             // 
             this.fuelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.fuelDataGridViewTextBoxColumn.DataPropertyName = "Fuel";
-            this.fuelDataGridViewTextBoxColumn.FillWeight = 60F;
             this.fuelDataGridViewTextBoxColumn.HeaderText = "Fuel";
             this.fuelDataGridViewTextBoxColumn.Name = "fuelDataGridViewTextBoxColumn";
             this.fuelDataGridViewTextBoxColumn.ReadOnly = true;
@@ -194,7 +168,7 @@
             // 
             this.kmstartDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.kmstartDataGridViewTextBoxColumn.DataPropertyName = "Km_start";
-            this.kmstartDataGridViewTextBoxColumn.FillWeight = 250F;
+            this.kmstartDataGridViewTextBoxColumn.FillWeight = 200F;
             this.kmstartDataGridViewTextBoxColumn.HeaderText = "Km_start";
             this.kmstartDataGridViewTextBoxColumn.Name = "kmstartDataGridViewTextBoxColumn";
             this.kmstartDataGridViewTextBoxColumn.ReadOnly = true;
@@ -204,7 +178,7 @@
             // 
             this.kmendDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.kmendDataGridViewTextBoxColumn.DataPropertyName = "Km_end";
-            this.kmendDataGridViewTextBoxColumn.FillWeight = 250F;
+            this.kmendDataGridViewTextBoxColumn.FillWeight = 200F;
             this.kmendDataGridViewTextBoxColumn.HeaderText = "Km_end";
             this.kmendDataGridViewTextBoxColumn.Name = "kmendDataGridViewTextBoxColumn";
             this.kmendDataGridViewTextBoxColumn.ReadOnly = true;
@@ -214,7 +188,6 @@
             // 
             this.hoursstartDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.hoursstartDataGridViewTextBoxColumn.DataPropertyName = "Hours_start";
-            this.hoursstartDataGridViewTextBoxColumn.FillWeight = 60F;
             this.hoursstartDataGridViewTextBoxColumn.HeaderText = "Hours_start";
             this.hoursstartDataGridViewTextBoxColumn.Name = "hoursstartDataGridViewTextBoxColumn";
             this.hoursstartDataGridViewTextBoxColumn.ReadOnly = true;
@@ -224,7 +197,7 @@
             // 
             this.hoursendDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.hoursendDataGridViewTextBoxColumn.DataPropertyName = "Hours_end";
-            this.hoursendDataGridViewTextBoxColumn.FillWeight = 250F;
+            this.hoursendDataGridViewTextBoxColumn.FillWeight = 200F;
             this.hoursendDataGridViewTextBoxColumn.HeaderText = "Hours_end";
             this.hoursendDataGridViewTextBoxColumn.Name = "hoursendDataGridViewTextBoxColumn";
             this.hoursendDataGridViewTextBoxColumn.ReadOnly = true;
@@ -234,7 +207,7 @@
             // 
             this.consumptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.consumptionDataGridViewTextBoxColumn.DataPropertyName = "Consumption";
-            this.consumptionDataGridViewTextBoxColumn.FillWeight = 60F;
+            this.consumptionDataGridViewTextBoxColumn.FillWeight = 50F;
             this.consumptionDataGridViewTextBoxColumn.HeaderText = "Consumption";
             this.consumptionDataGridViewTextBoxColumn.Name = "consumptionDataGridViewTextBoxColumn";
             this.consumptionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -244,7 +217,7 @@
             // 
             this.aDBLUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.aDBLUDataGridViewTextBoxColumn.DataPropertyName = "ADBLU";
-            this.aDBLUDataGridViewTextBoxColumn.FillWeight = 60F;
+            this.aDBLUDataGridViewTextBoxColumn.FillWeight = 50F;
             this.aDBLUDataGridViewTextBoxColumn.HeaderText = "ADBLU";
             this.aDBLUDataGridViewTextBoxColumn.Name = "aDBLUDataGridViewTextBoxColumn";
             this.aDBLUDataGridViewTextBoxColumn.ReadOnly = true;
@@ -269,35 +242,72 @@
             this.monthnrDataGridViewTextBoxColumn.ReadOnly = true;
             this.monthnrDataGridViewTextBoxColumn.Width = 77;
             // 
-            // Delete_document
+            // documentBindingSource
+            // 
+            this.documentBindingSource.DataMember = "Document";
+            this.documentBindingSource.DataSource = this.tabelDataSet;
+            // 
+            // tabelDataSet
+            // 
+            this.tabelDataSet.DataSetName = "tabelDataSet";
+            this.tabelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // documentTableAdapter
+            // 
+            this.documentTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(145, 267);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 47);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Statistici pe luni";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(378, 267);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 47);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Statistici pe masini";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // DocumentStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 393);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(739, 326);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Delete_document";
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "DocumentStatistics";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Delete_document";
+            this.Text = "DocumentStatistics";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Delete_document_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();
+            this.Load += new System.EventHandler(this.DocumentStatistics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private tabelDataSet tabelDataSet;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private tabelDataSet tabelDataSet;
         private System.Windows.Forms.BindingSource documentBindingSource;
         private tabelDataSetTableAdapters.DocumentTableAdapter documentTableAdapter;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn documentnoDataGridViewTextBoxColumn;

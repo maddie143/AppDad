@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace AppDad
 {
-    public partial class Delete_document : Form
+    public partial class DocumentStatistics : Form
     {
-
-        public Delete_document()
+        public DocumentStatistics()
         {
             InitializeComponent();
-
-            //documentTableAdapter.Fill(tabelDataSet.Document);
-            documentTableAdapter.orderedMonthDays(tabelDataSet.Document);
-            button1.Visible = true;
-            label1.Visible = false;
             dataGridView1.Refresh();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Ziua";
@@ -37,41 +31,25 @@ namespace AppDad
             dataGridView1.Columns[12].HeaderText = "Ruta de deplasare";
             dataGridView1.Columns[13].HeaderText = "Luna";
             dataGridView1.AutoResizeColumns();
-
         }
 
-        private void Delete_document_Load(object sender, EventArgs e)
+        private void DocumentStatistics_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'tabelDataSet.Document' table. You can move, or remove it, as needed.
             this.documentTableAdapter.Fill(this.tabelDataSet.Document);
 
-            // TODO: This line of code loads data into the 'tabelDataSet.Document' table. You can move, or remove it, as needed.
-            this.documentTableAdapter.Fill(this.tabelDataSet.Document);
-
-        }
-
-        public void PerformRefresh()
-        {
-            dataGridView1.Refresh(); 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Delete_document_confirmation confirmation = new Delete_document_confirmation(this.dataGridView1,this.button1,this.label1);
-            MessageBox.Show("Se deschide stergerea.");
-            confirmation.ShowDialog();
-
-
+            MonthlyStatistics monthly = new MonthlyStatistics();
+            monthly.ShowDialog();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
+            CarsMonthly cars = new CarsMonthly();
+            cars.ShowDialog();
         }
     }
 }

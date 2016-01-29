@@ -101,6 +101,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Delete_document_confirmation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete_document_confirmation";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formclos);
             this.Load += new System.EventHandler(this.Delete_document_confirmation_Load);

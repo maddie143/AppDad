@@ -166,18 +166,21 @@
             this.fiseToolStripMenuItem.Name = "fiseToolStripMenuItem";
             this.fiseToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.fiseToolStripMenuItem.Text = "Fise";
+            this.fiseToolStripMenuItem.Click += new System.EventHandler(this.fiseToolStripMenuItem_Click);
             // 
             // masiniToolStripMenuItem1
             // 
             this.masiniToolStripMenuItem1.Name = "masiniToolStripMenuItem1";
             this.masiniToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
             this.masiniToolStripMenuItem1.Text = "Masini";
+            this.masiniToolStripMenuItem1.Click += new System.EventHandler(this.masiniToolStripMenuItem1_Click);
             // 
             // soferiToolStripMenuItem1
             // 
             this.soferiToolStripMenuItem1.Name = "soferiToolStripMenuItem1";
             this.soferiToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
             this.soferiToolStripMenuItem1.Text = "Soferi";
+            this.soferiToolStripMenuItem1.Click += new System.EventHandler(this.soferiToolStripMenuItem1_Click);
             // 
             // tabelDataSet
             // 
@@ -228,6 +231,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

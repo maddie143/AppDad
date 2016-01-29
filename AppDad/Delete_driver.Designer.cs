@@ -90,6 +90,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Delete_driver";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Delete_driver";
             this.Load += new System.EventHandler(this.Delete_driver_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabelDataSet)).EndInit();
