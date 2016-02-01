@@ -15,6 +15,12 @@ namespace AppDad
         public Form1()
         {
             InitializeComponent();
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            label1.Visible = true;
+            label2.Visible = true;
+            button1.Visible = true;
+            button2.Visible = false;
         }
 
         private void adaugareFisaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,7 +92,8 @@ namespace AppDad
 
         private void stergereMasinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Delete_car car = new Delete_car();
+            car.ShowDialog();
         }
 
         private void stergereFisaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,6 +119,61 @@ namespace AppDad
         {
             DriversStatistics drivers = new DriversStatistics();
             drivers.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" || textBox2.Text != "")
+            {
+                if (textBox1.Text == UserPass.recover_password)
+                    MessageBox.Show(UserPass.password);
+                else
+                {
+                    if (textBox1.Text == UserPass.username.ToString())
+                    {
+                        if (textBox2.Text == UserPass.password.ToString())
+                        {
+                            //MessageBox.Show("Acces permis!");
+                            textBox1.Visible = false;
+                            textBox2.Visible = false;
+                            label1.Visible = false;
+                            label2.Visible = false;
+                            button1.Visible = false;
+                            menuStrip1.Visible = true;
+                            button2.Visible = true;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Parola incorecta!");
+                            textBox2.Text = "";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username invalid.");
+                        textBox2.Text = "";
+                        textBox1.Text = "";
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Datele nu sunt valide.");
+                textBox1.Text = "";
+                textBox2.Text = "";
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LogIn schimbare = new LogIn();
+            schimbare.ShowDialog();
         }
     }
 }

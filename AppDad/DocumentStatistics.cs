@@ -25,7 +25,7 @@ namespace AppDad
             dataGridView1.Columns[6].HeaderText = "KM plecare";
             dataGridView1.Columns[7].HeaderText = "KM sosire";
             dataGridView1.Columns[8].HeaderText = "Ore functionare";
-            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Columns[9].HeaderText = "Kilometri parcursi";
             dataGridView1.Columns[10].HeaderText = "Consum";
             dataGridView1.Columns[11].HeaderText = "ADBLU";
             dataGridView1.Columns[12].HeaderText = "Ruta de deplasare";

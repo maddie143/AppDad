@@ -58,7 +58,7 @@ namespace AppDad
         private void button1_Click(object sender, EventArgs e)
         {
             Delete_document_confirmation confirmation = new Delete_document_confirmation(this.dataGridView1,this.button1,this.label1);
-            MessageBox.Show("Se deschide stergerea.");
+            //MessageBox.Show("Se deschide stergerea.");
             confirmation.ShowDialog();
 
 

@@ -19,21 +19,34 @@ namespace AppDad
 
         private void button1_Click(object sender, EventArgs e)
         {
+            driversTableAdapter.Fill(tabelDataSet.Drivers);
             DialogResult answer;
             if (textBox1.Text != "")
             {
+                DataTable drivers = tabelDataSet.Drivers;
+                int i,
+                    ok;
+                ok = 1;
+                for (i = 0; i < drivers.Rows.Count; i++)
+                {
+                    if (drivers.Rows[i]["Driver_name"].ToString() == textBox1.Text)
+                        ok = 0;
 
-                answer = MessageBox.Show(this, "Doriti sa salvati?", "", MessageBoxButtons.YesNo);
-                if (answer == DialogResult.Yes)
+                }
+
+                if (ok == 1)
                 {
                     driversTableAdapter.New_driver(textBox1.Text);
                     //driversTableAdapter.Fill(tabelDataSet.Drivers);
                     //driversTableAdapter.Update(tabelDataSet.Drivers);
                     MessageBox.Show("Datele au fost adaugate cu succes.");
+                    this.Close();
+
                 }
                 else
                 {
-                    this.Close();
+                    MessageBox.Show("Soferul cu acest nume este deja inregistrat.");
+                    textBox1.Text = "";
                 }
             }
             else

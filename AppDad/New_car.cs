@@ -19,26 +19,44 @@ namespace AppDad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable cars = tabelDataSet.Cars;
+            DialogResult answer;
             int i,
                 ok;
             ok = 1;
-            for (i = 0; i < cars.Rows.Count; i++)
+            carsTableAdapter.Fill(tabelDataSet.Cars);
+            DataTable cars = tabelDataSet.Cars;
+
+            if (textBox1.Text != "")
             {
-                if (cars.Rows[i]["Car_number"].ToString() == textBox1.Text)
+                for (i = 0; i < cars.Rows.Count; i++)
                 {
-                    ok = 0;
+                    if (cars.Rows[i]["Car_number"].ToString() == textBox1.Text)
+                    {
+                        ok = 0;
+                    }
+                }
+
+                if (ok == 0)
+                {
+                    MessageBox.Show("Masina cu acest numar exista deja.");
+                    textBox1.Text = "";
+
+                }
+                else
+                {
+                    carsTableAdapter.New_car(textBox1.Text);
+                    MessageBox.Show("Masina a fost adaugata cu succes.");
+                    this.Close();
                 }
             }
+            else
+            {
+                answer = MessageBox.Show(this, "Nu ati introdus date. Doriti sa adaugati o doua data?", "", MessageBoxButtons.YesNo);
+                if (answer == DialogResult.No)
+                {
+                    this.Close();
+                }
 
-            if(ok == 0) {
-                MessageBox.Show("Masina cu acest numar exista deja.");
-
-            }
-            else {
-                carsTableAdapter.New_car(textBox1.Text);
-                MessageBox.Show("Masina a fost adaugata cu succes.");
-                this.Close();
             }
 
         }

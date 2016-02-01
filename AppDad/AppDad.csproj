@@ -114,11 +114,23 @@
     <Compile Include="DriversStatistics.Designer.cs">
       <DependentUpon>DriversStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Errors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Errors.Designer.cs">
+      <DependentUpon>Errors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="MonthlyStatistics.cs">
       <SubType>Form</SubType>
@@ -156,6 +168,7 @@
     <Compile Include="test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPass.cs" />
     <EmbeddedResource Include="Add_document.resx">
       <DependentUpon>Add_document.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,8 +196,14 @@
     <EmbeddedResource Include="DriversStatistics.resx">
       <DependentUpon>DriversStatistics.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Errors.resx">
+      <DependentUpon>Errors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonthlyStatistics.resx">
       <DependentUpon>MonthlyStatistics.cs</DependentUpon>

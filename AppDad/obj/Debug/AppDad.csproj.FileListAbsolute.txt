@@ -21,3 +21,5 @@ D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.CarsStatistics.resources
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.DriversStatistics.resources
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.MonthlyStatistics.resources
 D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.CarsMonthly.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.Errors.resources
+D:\Free time\Projects\AppDad\AppDad\obj\Debug\AppDad.LogIn.resources

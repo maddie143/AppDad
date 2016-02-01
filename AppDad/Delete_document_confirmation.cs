@@ -43,10 +43,10 @@ namespace AppDad
             {
                 if (documente.Rows[i]["Document_no"].ToString() == textBox1.Text)
                 {
-                    MessageBox.Show("Se deschide ceva.");
+                    //MessageBox.Show("Se deschide ceva.");
                     ok = 1;
                     documentTableAdapter.DeleteDocument(int.Parse(textBox1.Text));
-                    MessageBox.Show("aici?");
+                    //MessageBox.Show("aici?");
                     this.datagrid.DataSource = this.tabelDataSet.Tables["Document"];
                     this.documentTableAdapter.Fill(this.tabelDataSet.Document);
                     this.documentTableAdapter.Update(this.tabelDataSet.Document);
